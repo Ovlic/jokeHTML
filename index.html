@@ -1,136 +1,140 @@
 <!DOCTYPE html>
 <html class="bkg">
     <script src="jquery.js"></script>
+    <script src="style2.css"></script>
     <style>
         .itemdata{
-            background-color: #4CAF50; /* Green */
-            border: none;
-            border-radius: 4px;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            word-wrap: normal;
-            display: inline-block;
-            font-family: consolas;
-            font-size: 24px;
-            line-height: 100%;
-            width: 500px;
-            margin: 5px;
-        }
+    font-family: Consolas;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    word-wrap: normal;
+    display: inline-block;
+    font-family: consolas;
+    font-size: 24px;
+    line-height: 100%;
+    width: 500px;
+    margin: 5px;
+}
 
-        .jokerefresh {
-            visibility:inherit;
-            position: fixed;
-            border-radius: 20px;
-            bottom: 20px;
-            right: 20px;
-            padding: 0px 32px;
-            word-wrap:none;
-            white-space: nowrap;
-            /*
-            transition: right 5s ease-out;
-            transition: visibility 0.3s ease;
-            **/
-            background-color: white;
-            width: 190px;
-            height: 50px;
-            font-size: 16px;
-            text-align: left;
-        }
-        
-        .jokerefresh.textsize {
-            font-size: 16px;
-            height: 20px;
-            text-align: left;
-            word-wrap: none;
-            white-space: nowrap;
-        }
+.jokerefresh {
+    font-family: Consolas;
+    visibility:inherit;
+    position: fixed;
+    border-radius: 20px;
+    bottom: 20px;
+    right: 20px;
+    padding: 0px 32px;
+    word-wrap:none;
+    white-space: nowrap;
+    /*
+    transition: right 5s ease-out;
+    transition: visibility 0.3s ease;
+    **/
+    background-color: white;
+    width: 190px;
+    height: 50px;
+    font-size: 16px;
+    text-align: left;
+}
 
-        .fadeOut {
-            visibility: hidden;
-            opacity: 0;
-            transition: visibility 0s linear 300ms, opacity 300ms;
-        }
+.jokerefresh.textsize {
+    font-size: 16px;
+    height: 20px;
+    text-align: left;
+    word-wrap: none;
+    white-space: nowrap;
+}
 
-        .fadeIn {
-            visibility: visible;
-            opacity: 1;
-            transition: visibility 0s linear 0s, opacity 300ms;
-        }
+.fadeOut {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 300ms, opacity 300ms;
+}
 
-        .newjokebtn {
-            border-color: transparent;
-            color: black;
-            position: absolute;
-            border-radius: 20px;
-            bottom: 20px;
-            left: 20px;
-            padding: 0px 32px;
-            word-wrap: none;
-            white-space: nowrap;
-            transition: background-color .125s linear;
-            transition: color .125s linear;
-            background-color: white;
-            width: 125px;
-            height: 50px;
-            font-size: 16px;
-            text-align: left;
-        }
+.fadeIn {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s linear 0s, opacity 300ms;
+}
 
-        .pausejokebtn {
-            border-color: transparent;
-            color: black;
-            position: absolute;
-            border-radius: 20px;
-            bottom: 20px;
-            left: 175px;
-            padding: 0px 32px;
-            word-wrap: none;
-            white-space: nowrap;
-            transition: background-color .125s linear;
-            transition: color .125s linear;
-            background-color: white;
-            width: 125px;
-            height: 50px;
-            font-size: 16px;
-            text-align: left;
-        }
-        
-        .newjokebtn:hover {
-            background-color: black;
-            color: white;
-        }
+.newjokebtn {
+    font-family: Arial;
+    border-color: transparent;
+    color: black;
+    position: absolute;
+    border-radius: 20px;
+    bottom: 20px;
+    left: 20px;
+    padding: 0px 32px;
+    word-wrap: none;
+    white-space: nowrap;
+    transition: background-color .125s linear;
+    transition: color .125s linear;
+    background-color: white;
+    width: 125px;
+    height: 50px;
+    font-size: 16px;
+    text-align: left;
+}
 
-        .pausejokebtn:hover {
-            background-color: black;
-            color: white;
-        }
+.pausejokebtn {
+    font-family: Arial;
+    border-color: transparent;
+    color: black;
+    position: absolute;
+    border-radius: 20px;
+    bottom: 20px;
+    left: 175px;
+    padding: 0px 32px;
+    word-wrap: none;
+    white-space: nowrap;
+    transition: background-color .125s linear;
+    transition: color .125s linear;
+    background-color: white;
+    width: 125px;
+    height: 50px;
+    font-size: 16px;
+    text-align: left;
+}
 
-        .bkg {
-            background-color: #4CAF50;
-        }
+.newjokebtn:hover {
+    background-color: black;
+    color: white;
+}
 
-        .center {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
+.pausejokebtn:hover {
+    background-color: black;
+    color: white;
+}
 
-        .top {
-            background-color: black;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: inline;
-        }
-        /*<h1 class="jokerefresh textsize">New joke in <joketimer id="jrefreshtimer">10</joketimer> seconds</h1>*/
+.bkg {
+    background-color: #4CAF50;
+}
+
+.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.top {
+    background-color: black;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
     </style>
+
     <body>
         <div class="center">
         <div class="itemdata" id="jokediv">
-            <h1 id="joke"></h1>
         </div>
         </div>
         <div id="jokerefreshdiv" class="jokerefresh">
@@ -140,11 +144,12 @@
             <button class="newjokebtn" onclick="myfunction()" id="newjokebtn"><centertxt class="center">New Joke</centertxt></button>
             <button class="pausejokebtn" onclick="pauseJoke()" id="pausejokebtn"><centertxt class="center" id="pausebtntxt">Pause Joke</centertxt></button>
         </div>
-        <script async>
+        <script>
             var pauseloop = "start";
             const joke = document.getElementById("joke");
             const jrefresh = document.getElementById("jrefreshtimer")
             const jokerefresh = document.getElementById("jokerefreshdiv")
+            jokerefresh.classList.add("fadeIn")
             var timer = 0;
             var counter = Number(10)
             console.log("set counter to 10")
@@ -168,13 +173,15 @@
                 if(pauseloop === 1){
                     pauseloop = 0
                     console.log(counter)
-                    jokerefresh.classList.toggle("fadeOut");
+                    jokerefresh.classList.remove("fadeIn");
+                    jokerefresh.classList.add("fadeOut");
                     pausebtn.innerHTML = "Resume Joke"
                     
                 } else if(pauseloop === 0){
                     pauseloop = 2
                     joketimer()
-                    jokerefresh.classList.toggle("fadeIn")
+                    jokerefresh.classList.remove("fadeOut");
+                    jokerefresh.classList.add("fadeIn");
                     pausebtn.innerHTML = "Pause Joke"
                     //jokerefresh.style = "jokerefresh"
                 }
@@ -209,8 +216,6 @@
                 this.blur();   
             }      
             
-
-
         </script>
     </body>
 </html>
